@@ -1,0 +1,526 @@
+/* ============================================
+   General Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0066cc;
+    --secondary-color: #00d4ff;
+    --dark-bg: #0f1419;
+    --light-bg: #1a1f2e;
+    --text-light: #e0e0e0;
+    --text-dark: #ffffff;
+    --border-color: #2a3f5f;
+    --success: #00d084;
+    --danger: #ff3366;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2a3a 100%);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   Navigation Bar
+   ============================================ */
+.navbar {
+    background: rgba(15, 20, 25, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.navbar-brand .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--secondary-color);
+}
+
+.btn-login {
+    background: var(--primary-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    color: var(--text-dark) !important;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-light);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-dark);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 102, 204, 0.3);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   Rates Section
+   ============================================ */
+.rates-section {
+    padding: 60px 20px;
+    background: var(--light-bg);
+}
+
+.rates-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+
+.rates-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-input,
+.currency-select {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: rgba(42, 63, 95, 0.3);
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.search-input:focus,
+.currency-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+}
+
+.rates-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.rate-card {
+    background: rgba(26, 31, 46, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.rate-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
+}
+
+.rate-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.rate-card .rate-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.rate-card .rate-change {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.rate-change.positive {
+    color: var(--success);
+}
+
+.rate-change.negative {
+    color: var(--danger);
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   Calculator Section
+   ============================================ */
+.calculator-section {
+    padding: 60px 20px;
+}
+
+.calculator-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+
+.calculator-wrapper {
+    background: rgba(26, 31, 46, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 1fr;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.calc-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-input-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.calc-input-group input,
+.calc-input-group select {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: rgba(42, 63, 95, 0.3);
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.calc-input-group input:focus,
+.calc-input-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+}
+
+.calc-swap {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.calc-swap:hover {
+    transform: scale(1.2);
+}
+
+.calc-result {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding: 1rem;
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.calc-result p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+#calcResult {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+}
+
+/* ============================================
+   About Section
+   ============================================ */
+.about-section {
+    padding: 60px 20px;
+    background: var(--light-bg);
+}
+
+.about-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: rgba(26, 31, 46, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 102, 204, 0.2);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.feature-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ============================================
+   Contact Section
+   ============================================ */
+.contact-section {
+    padding: 60px 20px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+
+.contact-form {
+    background: rgba(26, 31, 46, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: rgba(42, 63, 95, 0.3);
+    color: var(--text-light);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background: rgba(15, 20, 25, 0.95);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 1rem;
+        background: var(--dark-bg);
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .calculator-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .rates-table {
+        grid-template-columns: 1fr;
+    }
+
+    .rates-filters {
+        flex-direction: column;
+    }
+
+    .search-input,
+    .currency-select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .rates-section h2,
+    .calculator-section h2,
+    .about-section h2,
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .navbar-brand .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 0.5rem;
+    }
+}
