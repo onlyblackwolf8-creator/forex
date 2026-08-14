@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForexPro - Professional Forex Trading Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo">ForexPro</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rates">Live Rates</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn-login">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Trade Forex Like a Pro</h2>
+                <p>Access real-time currency rates and advanced trading tools</p>
+                <button class="btn btn-primary" onclick="scrollToRates()">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Rates Section -->
+    <section id="rates" class="rates-section">
+        <div class="container">
+            <h2>Live Exchange Rates</h2>
+            <div class="rates-filters">
+                <input type="text" id="searchCurrency" placeholder="Search currency..." class="search-input">
+                <select id="baseSelect" class="currency-select">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CAD">CAD</option>
+                    <option value="AUD">AUD</option>
+                </select>
+            </div>
+            <div id="ratesTable" class="rates-table">
+                <div class="loading">Loading rates...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forex Calculator Section -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2>Forex Calculator</h2>
+            <div class="calculator-wrapper">
+                <div class="calc-input-group">
+                    <label>Amount</label>
+                    <input type="number" id="amount" placeholder="Enter amount" value="1" min="0">
+                </div>
+                <div class="calc-input-group">
+                    <label>From</label>
+                    <select id="fromCurrency">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                        <option value="CAD">CAD</option>
+                        <option value="AUD">AUD</option>
+                        <option value="CHF">CHF</option>
+                        <option value="INR">INR</option>
+                    </select>
+                </div>
+                <div class="calc-swap">⇄</div>
+                <div class="calc-input-group">
+                    <label>To</label>
+                    <select id="toCurrency">
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                        <option value="CAD">CAD</option>
+                        <option value="AUD">AUD</option>
+                        <option value="CHF">CHF</option>
+                        <option value="INR">INR</option>
+                    </select>
+                </div>
+                <div class="calc-result">
+                    <p>Result: <span id="calcResult">0.00</span> <span id="resultCurrency">EUR</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>Why Choose ForexPro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-Time Rates</h3>
+                    <p>Get live exchange rates updated every second for all major currency pairs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Trading</h3>
+                    <p>Industry-leading security protocols to protect your trading activities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Ready</h3>
+                    <p>Trade from anywhere with our fully responsive mobile platform.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Execution</h3>
+                    <p>Lightning-fast order execution with minimal latency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <form class="contact-form" onsubmit="handleContactForm(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ForexPro. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
